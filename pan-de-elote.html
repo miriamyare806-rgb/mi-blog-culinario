@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receta: Pan de Elote</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body id="pan-de-elote">
+  <header>
+    <nav class="nav container">
+      <a class="logo" href="index.html">
+        <img src="imagenes/logo.png" alt="Logo"><span>Mi Blog Culinario</span>
+      </a>
+       <button id="theme-toggle" class="tema-btn"></button>
+      <button id="hamburger" class="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <h1>Pan de Elote</h1>
+      <ul class="nav-list">
+      <li><a href="index.html" title="Volver a la página principal">Inicio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <img class="receta-img" src="imagenes/pan_de_elote2.png" alt="Pan de elote recién cortado y servido en un plato ">
+      <section>
+      <h2>Ingredientes</h2>
+      <ul>
+        <li>4 Elotes desgranados</li>
+        <li>4 Huevos</li>
+        <li>1 Barra de mantequilla</li>
+        <li>4 Cucharadas de harina de trigo</li>
+        <li>1 Cucharada de polvo para hornear</li>
+        <li>1 Lata de leche condensada</li>
+        <li>Esencia de vainilla al gusto</li>
+        <li>1/4 De taza de leche</li>
+      </ul>
+      </section>
+
+      <section>
+      <h2>Preparación</h2>
+      <ol>
+         <li>Precalienta el horno a 180°C y engrasa un molde (puede ser redondo o rectangular). </li>
+         <li>Licuar los ingredientes húmedos: En una licuadora, mezcla los granos de elote, la leche condensada, los huevos, la mantequilla y el extracto de vainilla hasta obtener una mezcla suave y homogénea.</li>
+         <li>Mezclar los ingredientes secos: En un bol aparte, combina la harina, el polvo para hornear y la sal. Agrega esta mezcla a la licuadora poco a poco hasta que todo se integre.</li>
+         <li>Verter en el molde: Vierte la mezcla en el molde engrasado, distribuyéndola de manera uniforme.</li>
+         <li>Hornea durante 45-50 minutos, o inserta un tenedor en el centro y si sale limpio, quiere decir que el pan está ya cocido.</li>
+         <li>Sácalo del Horno y deja enfriar antes de desmoldarlo.</li>
+         <li>Puedes servirlo caliente o a temperatura ambiente y acompañarlo de un atole.</li>
+      </ol>
+    </article>
+      </section>
+      <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const body = document.body;
+  const btn = document.getElementById("theme-toggle");
+
+  if (localStorage.getItem("tema") === "oscuro") {
+    body.classList.add("oscuro");
+    btn.textContent = "☀"; 
+  } else {
+    btn.textContent = "🌙";
+  }
+
+  btn.addEventListener("click", function() {
+    body.classList.toggle("oscuro");
+
+    if (body.classList.contains("oscuro")) {
+      btn.textContent = "☀";
+      localStorage.setItem("tema", "oscuro");
+    } else {
+      btn.textContent = "🌙";
+      localStorage.setItem("tema", "claro"); 
+    }
+  });
+});
+
+  const hamburger = document.getElementById("hamburger");
+  const navList = document.querySelector(".nav-list");
+
+  hamburger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+</script>
+  </main>
+
+  <footer id="contacto" aria-label="Pie de página">
+    <p>Información de contacto: <a>miriamyare806@gmail.com</a></p>
+    <p>&copy;Mi Blog Culinario - Creado por Miriam Yaretzi López Sánchez - 2025</p>
+  </footer>
+</body>
+</html>
